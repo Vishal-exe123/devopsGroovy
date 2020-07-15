@@ -82,7 +82,7 @@ job("ak3_groovy"){
     upstream('ak2_groovy' , 'SUCCESS')
 }
   publishers {
-    extendEmail {
+    extendedEmail {
         recipientList('vishalyadav831874@gmail.com')
         defaultSubject('Job status')
                attachBuildLog(attachBuildLog = true)
