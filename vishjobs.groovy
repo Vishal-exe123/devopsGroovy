@@ -41,7 +41,7 @@ job("ak2_groovy"){
                    echo  $POD2
                   sudo   kubectl  cp   /vish/jenkins/vishal.html  $POD2:/var/www/html
           else
-                  sudo  kubectl   apply  -f  /vish/jenkins/phppod.yml
+                  sudo  kubectl   apply  -f  /vish/jenkins/phpod.yml
                    POD2=$(sudo  kubectl get pods  -l app=php  -o jsonpath="{.items[0].metadata.name}")
                    echo  $POD2
                   sudo   kubectl  cp   /vish/jenkins/vishal.html  $POD2:/var/www/html
