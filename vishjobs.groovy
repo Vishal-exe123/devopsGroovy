@@ -13,7 +13,7 @@ triggers{
 
 job("ak2_groovy"){
   steps{
-   shell(' ' '
+   shell('''
      if   sudo  ls  /vish/jenkins  |  grep  html
     then    
              if  sudo kubectl  get pods --selector  "app in (apache)"  |  grep  apachepod
@@ -49,7 +49,7 @@ job("ak2_groovy"){
     else  
           echo  "no html file" 
     fi
-' ' ')
+''')
 }
   triggers{
     upstream('ak1_groovy' , 'SUCCESS')
@@ -58,7 +58,7 @@ job("ak2_groovy"){
 
 job("ak3_groovy"){
    steps{
-         shell( ' ' '
+         shell('''
           status=$(curl  -o  /dev/null  -s  -w  "%{httpd_code}"   http://192.168.99.101:31000)
           if  [[ $status ==  200 ]]
           then
@@ -76,7 +76,7 @@ job("ak3_groovy"){
          else
               exit 1
          fi
-' ' ')
+''')
 }
   triggers{
     upstream('ak2_groovy' , 'SUCCESS')
