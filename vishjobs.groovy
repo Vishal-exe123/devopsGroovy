@@ -16,7 +16,7 @@ job("ak2_groovy"){
    shell('''
      if   sudo  ls  /vish/jenkins  |  grep  html
     then    
-             if  sudo kubectl  get pods --selector  "app in (apache)"  |  grep  apachepod
+             if  sudo kubectl  get pods --selector  "app in (apache)"  |  grep  apache-pod
              then
                    POD1=$(sudo  kubectl get pods  -l app=apache  -o jsonpath="{.items[0].metadata.name}")
                    echo  $POD1
@@ -35,7 +35,7 @@ job("ak2_groovy"){
 
     if   sudo  ls  /vish/jenkins  |  grep  php
     then    
-             if  sudo kubectl  get pods --selector  "app in (php)"  |  grep  phppod
+             if  sudo kubectl  get pods --selector  "app in (php)"  |  grep  php-pod
              then
                    POD2=$(sudo  kubectl get pods  -l app=php  -o jsonpath="{.items[0].metadata.name}")
                    echo  $POD2
