@@ -7,7 +7,7 @@ steps{
   shell('sudo  cp  -rvf  *  /vish/jenkins')
 }
 triggers{
-   githubPushTrigger()
+   gitHubPushTrigger()
 }
 }
 
