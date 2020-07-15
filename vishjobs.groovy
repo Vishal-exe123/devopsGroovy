@@ -59,7 +59,7 @@ job("ak2_groovy"){
 job("ak3_groovy"){
    steps{
          shell('''
-          status=$(curl  -o  /dev/null  -s  -w  "%{httpd_code}"   http://192.168.99.101:31000)
+          status=$(curl  -o  /dev/null  -s  -w  "%{http_code}"   http://192.168.99.101:31000)
           if  [[ $status ==  200 ]]
           then
                echo  "apache html is running"
@@ -68,7 +68,7 @@ job("ak3_groovy"){
               exit 1
          fi
 
-         status=$(curl  -o  /dev/null  -s  -w  "%{httpd_code}"   http://192.168.99.101:32000)
+         status=$(curl  -o  /dev/null  -s  -w  "%{http_code}"   http://192.168.99.101:32000)
           if  [[ $status ==  200 ]]
           then
                echo  "apache php is running"
