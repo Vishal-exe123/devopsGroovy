@@ -94,7 +94,7 @@ job("ak3_groovy"){
             content('Body')
            sendTo{
               developers()
-             recipientsList()
+             recipientList()
             }
         }
     }
