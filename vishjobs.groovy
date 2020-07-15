@@ -87,7 +87,7 @@ job("ak3_groovy"){
         defaultSubject('Job status')
                attachBuildLog(attachBuildLog = true)
         defaultContent('Status Report')
-        contentType('text/html/php')
+        contentType('text/html')
        triggers {
             always {
             subject('build Status')
